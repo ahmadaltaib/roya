@@ -11,8 +11,35 @@
 |
 */
 
-Auth::routes();
+Route::group([
+        'prefix' => LaravelLocalization::setLocale(),
+        'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
+    ],
+    function() {
 
-Route::get('/', 'LandingController@welcome')->name('welcome');
+    // browse Calls
+    Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('/', 'LandingController@welcome')->name('welcome');
+
+    Route::get('/show/{id}', 'ShowController@showDetails')->name('showDetails');
+
+    Route::get('/show/{id}/season/{season}', 'ShowController@seasonDetails')->name('seasonDetails');
+
+    Route::get('/list', 'ShowController@listShows')->name('Listing');
+
+    Route::get('/list/{page}', 'ShowController@listShows')->name('Listing');
+
+    Route::get('/episode/{id}', 'EpisodeController@episodeDetails')->name('episodeDetails');
+
+    // AJAX Calls
+    Route::get('/follow', 'ShowController@follow');
+
+    Route::get('/unfollow', 'ShowController@unFollow');
+
+    Route::get('/rate', 'EpisodeController@rate');
+
+    Route::get('/undorate', 'EpisodeController@undoRate');
+
+
+});

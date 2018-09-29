@@ -27,4 +27,12 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function rates(){
+        return $this->hasMany('App\Models\ShowEpisodesRate', 'user_id', 'id');
+    }
+
+    public function following(){
+        return $this->hasMany('App\Models\ShowFollow', 'user_id', 'id');
+    }
 }

@@ -160,6 +160,12 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        /*
+         * Custom added by altaib
+         */
+        Mcamara\LaravelLocalization\LaravelLocalizationServiceProvider::class,
+        JsLocalization\JsLocalizationServiceProvider::class
+
     ],
 
     /*
@@ -209,6 +215,10 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
 
+        /*
+         * Custom added by altaib
+         */
+        'LaravelLocalization' => Mcamara\LaravelLocalization\Facades\LaravelLocalization::class,
     ],
 
 ];
