@@ -166,6 +166,7 @@ return [
         Mcamara\LaravelLocalization\LaravelLocalizationServiceProvider::class,
         JsLocalization\JsLocalizationServiceProvider::class,
         Elasticquent\ElasticquentServiceProvider::class,
+        CrudGenerator\CrudGeneratorServiceProvider::class,
 
     ],
 

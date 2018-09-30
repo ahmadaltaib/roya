@@ -41,8 +41,18 @@ Route::group([
 
     Route::get('/undorate', 'EpisodeController@undoRate');
 
+    // Search Calls
     Route::match(['get', 'post'], '/search', 'SearchController@search');
+
     Route::match(['get', 'post'], '/search/{keyword}', 'SearchController@search');
 
+    // Admin Calls
+    Route::get('/admin', 'AdminController@admin')->middleware('is_admin')->name('admin');
+
+    Route::get('/admin/users', 'AdminController@users')->middleware('is_admin')->name('users');
+
+    Route::get('/admin/shows', 'AdminController@shows')->middleware('is_admin')->name('shows');
+
+    Route::get('/admin/episodes', 'AdminController@episodes')->middleware('is_admin')->name('episodes');
 
 });

@@ -25,5 +25,9 @@ return [
     "SHORT_SEARCH" => "Search text too short",
     "NO_RESULTS" => "No results for your search",
 
+    "DASHBOARD" => "Dashboard",
+    "SHOWS" => "Shows",
+    "EPISODES" => "Episodes",
+    "USERS" => "Users"
 
 ];

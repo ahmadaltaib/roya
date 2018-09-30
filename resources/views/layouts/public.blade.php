@@ -21,7 +21,7 @@
 
         <!-- Styles -->
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-        <link href="{{ asset('css/newLayout.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/webLayout.css') }}" rel="stylesheet">
         <link href="{{ asset('font/css/font-awesome.min.css') }}" rel="stylesheet">
     </head>
 
