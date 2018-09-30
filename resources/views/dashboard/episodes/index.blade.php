@@ -1,12 +1,11 @@
 @extends('dashboard.layout')
 
 @section('content')
-
-    <h2 class="page-header">{{ __('roya.USERS') }}</h2>
+    <h2 class="page-header">{{ __('roya.EPISODES') }}</h2>
 
     <div class="panel panel-default">
         <div class="panel-heading">
-             {{ __("roya.LIST_OF").' '.__('roya.USERS') }}
+            {{ __("roya.LIST_OF").' '.__('roya.EPISODES') }}
         </div>
 
         <div class="panel-body">
@@ -15,9 +14,12 @@
                     <thead>
                         <tr>
                             <th>Id</th>
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>Type</th>
+                            <th>Season Id</th>
+                            <th>Title</th>
+                            <th>Description</th>
+                            <th>Show Time</th>
+                            <th>Thumbnail</th>
+                            <th>Video</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -38,15 +40,8 @@
                 "serverSide": true,
                 "ordering": true,
                 "responsive": true,
-                "ajax": "{{url('/admin/users/grid')}}",
-                "columnDefs": [
-                    {
-                        "render": function ( data, type, row ) {
-                            return '<a href="{{ url('/admin/users') }}/'+row[0]+'">'+data+'</a>';
-                        },
-                        "targets": 1
-                    }
-                ]
+                "ajax": "{{url('admin/episodes/grid')}}",
+                "columnDefs": []
             });
         });
     </script>

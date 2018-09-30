@@ -56,8 +56,10 @@ Route::group([
     Route::get('/admin/users/grid', 'UsersController@grid');
     Route::resource('/admin/users', 'UsersController');
 
-    Route::get('/admin/shows', 'AdminController@shows')->middleware('is_admin')->name('shows');
+    Route::get('/admin/shows/grid', 'ShowController@grid');
+    Route::resource('/admin/shows', 'ShowController');
 
-    Route::get('/admin/episodes', 'AdminController@episodes')->middleware('is_admin')->name('episodes');
+    Route::get('/admin/episodes/grid', 'episodeController@grid');
+    Route::resource('/admin/episodes', 'episodeController');
 
 });

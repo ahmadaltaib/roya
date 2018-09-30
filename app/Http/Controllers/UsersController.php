@@ -2,14 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
-
-use App\Models\User;
-
-use DB;
+use Illuminate\Http\Request,
+    App\Http\Requests,
+    App\Http\Controllers\Controller,
+    App\Models\User,
+    DB;
 
 class UsersController extends Controller{
 

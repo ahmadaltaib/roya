@@ -2,31 +2,30 @@
 
 @section('content')
 
-    <h2 class="page-header">{{ __('roya.USERS') }}</h2>
-
+<h2 class="page-header">{{ __('roya.SHOWS') }}</h2>
     <div class="panel panel-default">
         <div class="panel-heading">
-             {{ __("roya.LIST_OF").' '.__('roya.USERS') }}
+            {{ __("roya.LIST_OF").' '.__('roya.SHOWS') }}
         </div>
-
         <div class="panel-body">
             <div class="">
                 <table class="table table-striped" id="thegrid">
                     <thead>
                         <tr>
                             <th>Id</th>
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>Type</th>
+                            <th>Title</th>
+                            <th>Description</th>
+                            <th>Show Time</th>
+                            <th>Thumbnail</th>
                         </tr>
                     </thead>
                     <tbody>
                     </tbody>
                 </table>
             </div>
+
         </div>
     </div>
-
 @endsection
 
 @section('scripts')
@@ -38,14 +37,8 @@
                 "serverSide": true,
                 "ordering": true,
                 "responsive": true,
-                "ajax": "{{url('/admin/users/grid')}}",
+                "ajax": "{{url('admin/shows/grid')}}",
                 "columnDefs": [
-                    {
-                        "render": function ( data, type, row ) {
-                            return '<a href="{{ url('/admin/users') }}/'+row[0]+'">'+data+'</a>';
-                        },
-                        "targets": 1
-                    }
                 ]
             });
         });
