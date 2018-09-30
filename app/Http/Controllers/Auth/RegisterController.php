@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\User;
-use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Validator;
-use Illuminate\Foundation\Auth\RegistersUsers;
+use App\Models\User,
+    App\Http\Controllers\Controller,
+    Illuminate\Support\Facades\Hash,
+    Illuminate\Support\Facades\Validator,
+    Illuminate\Foundation\Auth\RegistersUsers,
+    Illuminate\Support\Facades\Input;
 
 class RegisterController extends Controller
 {
@@ -28,7 +29,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -52,6 +53,7 @@ class RegisterController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
+            'avatar' => 'image|mimes:jpg,png',
         ]);
     }
 
@@ -59,14 +61,25 @@ class RegisterController extends Controller
      * Create a new user instance after a valid registration.
      *
      * @param  array  $data
-     * @return \App\User
+     * @return \App\Models\User
      */
-    protected function create(array $data)
-    {
+    protected function create(array $data){
+
+        $sAvatar = 'avatar.jpg';
+        if (Input::file('avatar')->isValid()) {
+            $sDestinationPath = public_path('uploads/avatars');
+            $sExtension = Input::file('avatar')->getClientOriginalExtension();
+            $sAvatar = uniqid().'.'.$sExtension;
+
+            Input::file('avatar')->move($sDestinationPath, $sAvatar);
+        }
+
         return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
+            'name'     => $data['name'],
+            'email'    => $data['email'],
             'password' => Hash::make($data['password']),
+            'type'     => User::DEFAULT_TYPE,
+            'avatar'   => $sAvatar
         ]);
     }
 }

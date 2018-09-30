@@ -1,0 +1,36 @@
+<?php
+
+return [
+    "ROYA" => "Ro'ya",
+    "RECENT_SHOWS" => "Recent Shows",
+    "RECENT_EPISODES" => "Recent Episodes",
+    "NEED_QUICK_HELP_TYPE_YOUR_WORDS" => "Need quick help? Search here",
+    "FIND" => "Find",
+    "SEASON" => "Season no. ",
+    "NO_SEASONS" => "No available seasons for this show.",
+    "NO_EPISODES" => "No available episodes for this season.",
+    "LIST_ALL" => "List All > ",
+    "LIST_ALL_SHOWS" => "List all shows",
+    "LIST_ALL_EPISODES" => "List all episodes",
+    "LIKE" => "Like",
+    "DISLIKE" => "Dislike",
+    "SHOW_NAME" => "Show Name",
+    "SHOW_TIME" => "Show Time",
+    "SEASONE_NO" => "Seasone no.",
+    "LENGTH" => "Episode time",
+    "DESCRIPTION" => "Description",
+    "FOLLOW" => "Follow",
+    "UNFOLLOW" => "Un-follow",
+    "RATE" => "Your rate is <b>:rate</b> ",
+    "UNDO_RATE" => "Undo Rate!",
+    "EMPTY_SEARCH" => "Please enter string for search",
+    "SHORT_SEARCH" => "Search text too short",
+    "NO_RESULTS" => "No results for your search",
+
+    "DASHBOARD" => "Dashboard",
+    "SHOWS" => "Shows",
+    "EPISODES" => "Episodes",
+    "USERS" => "Users",
+    "LIST_OF" => "List of",
+
+];
