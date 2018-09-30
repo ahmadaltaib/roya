@@ -21,6 +21,9 @@ return [
     "UNFOLLOW" => "Un-follow",
     "RATE" => "Your rate is <b>:rate</b> ",
     "UNDO_RATE" => "Undo Rate!",
+    "EMPTY_SEARCH" => "Please enter string for search",
+    "SHORT_SEARCH" => "Search text too short",
+    "NO_RESULTS" => "No results for your search",
 
 
 ];

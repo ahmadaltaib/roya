@@ -37,7 +37,7 @@ class ShowController extends Controller{
         $dCount = Show::get()->count();
         $dPages = ceil($dCount/$dLimit);
 
-        return view('show.listing', [
+        return view('show.showListing', [
             'aShows' => $aShow,
             'dPages' => $dPages,
             'dCurrentPages' => $dPage,

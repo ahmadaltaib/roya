@@ -92,5 +92,36 @@ $(document).ready(function(){
         });
     });
 
+    $('body').on('click', '#find', function(e){
+        e.preventDefault();
+        var searchKeyword = $('#keyword').val().trim();
+        searchKeyword     = searchKeyword.replace(/&/gi, 'and');
+        searchKeyword     = searchKeyword.replace(/[\+?\/#%><!\\]/g, ' ');
+        searchKeyword     = searchKeyword.replace(/ +/g, '+');
+        var newAction     = '/search/'+searchKeyword;
+        if(searchKeyword.length !== 0){
+            $('#search-form').attr('action', newAction);
+            $('#search-form').submit();
+        }else{
+            $('#keyword').focus();
+        }
+    });
+
+    $('body').on('keydown', function(e){
+        if(e.keyCode === 13){
+            e.preventDefault();
+            var searchKeyword = $('#keyword').val().trim();
+            searchKeyword     = searchKeyword.replace(/&/gi, 'and');
+            searchKeyword     = searchKeyword.replace(/[\+?\/#%><!\\]/g, ' ');
+            searchKeyword     = searchKeyword.replace(/ +/g, '+');
+            var newAction     = '/search/'+searchKeyword;
+            if(searchKeyword.length !== 0){
+                $('#search-form').attr('action', newAction);
+                $('#search-form').submit();
+            }else{
+                $('#keyword').focus();
+            }
+        }
+    });
 
 });

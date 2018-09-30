@@ -164,7 +164,8 @@ return [
          * Custom added by altaib
          */
         Mcamara\LaravelLocalization\LaravelLocalizationServiceProvider::class,
-        JsLocalization\JsLocalizationServiceProvider::class
+        JsLocalization\JsLocalizationServiceProvider::class,
+        Elasticquent\ElasticquentServiceProvider::class,
 
     ],
 
@@ -219,6 +220,7 @@ return [
          * Custom added by altaib
          */
         'LaravelLocalization' => Mcamara\LaravelLocalization\Facades\LaravelLocalization::class,
+        'Es' => Elasticquent\ElasticquentElasticsearchFacade::class,
     ],
 
 ];

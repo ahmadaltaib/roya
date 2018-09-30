@@ -41,5 +41,8 @@ Route::group([
 
     Route::get('/undorate', 'EpisodeController@undoRate');
 
+    Route::match(['get', 'post'], '/search', 'SearchController@search');
+    Route::match(['get', 'post'], '/search/{keyword}', 'SearchController@search');
+
 
 });
