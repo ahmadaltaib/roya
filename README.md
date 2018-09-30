@@ -1,6 +1,6 @@
 # Ro'ya `look-shows` 
 
-#### Environment specifications and Technologies
+## Environment specifications and Technologies
 * **Laravel 5.6**
     - laravel Server Requirements:
         - OpenSSL PHP Extension
@@ -19,7 +19,7 @@
 * **Kiban 5.6.3**
 * **Datatables 1.10.9**
 
-#### Laravel Service Providers 
+## Laravel Service Providers 
 * **LaravelLocalization**
     - Used to add local in url (http://roya.tv/[en/ar]).
 * **JsLocalization**
@@ -29,6 +29,6 @@
 * **CrudGenerator**
     - php artisan command to generate fully working crud with grid paginated server side only by having database tables 
     
-#### Author
+## Author
 
 * **Ahmad Ali** - [altaib.net](http://altaib.net/)
