@@ -32,6 +32,10 @@
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            @if(auth()->user()->isAdmin())
+                                <a class="dropdown-item" href="{{ url('/admin') }}" target="_blank">{{ __('roya.DASHBOARD') }}</a>
+                                <div class="dropdown-divider"></div>
+                            @endif
                             <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                 @csrf

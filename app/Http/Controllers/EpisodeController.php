@@ -47,4 +47,20 @@ class EpisodeController extends Controller{
         );
         return response()->json($response);
     }
+
+    public function listEpisodes($dPage = 1){
+
+        $dLimit     = 4;
+        $dOffset    = ($dPage-1)*$dLimit;
+        $aEpisodes  = \DB::table('show_season_episodes')->skip($dOffset)->take($dLimit)->get();;
+
+        $dCount = ShowSeasonEpisodes::get()->count();
+        $dPages = ceil($dCount/$dLimit);
+
+        return view('show.episodesListing', [
+            'aEpisodes' => $aEpisodes,
+            'dPages' => $dPages,
+            'dCurrentPages' => $dPage,
+        ]);
+    }
 }

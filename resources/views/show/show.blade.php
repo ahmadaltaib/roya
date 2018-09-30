@@ -47,7 +47,7 @@
                     @endforeach
                 </ul>
 
-                @include('show.episodeListing')
+                @include('show.seasonEpisodesListing')
 
             @else
                 <br>

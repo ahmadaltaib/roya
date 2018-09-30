@@ -32,7 +32,7 @@
                 @endforeach
             </ul>
 
-            @include('show.episodeListing')
+            @include('show.seasonEpisodesListing')
         </div>
     </div>
 

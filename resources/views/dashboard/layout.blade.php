@@ -51,7 +51,7 @@
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="./">{{__('roya.ROYA')}}</a></li>
+                                    <li><a href="{{ url('/') }}" target="_blank">{{__('roya.ROYA')}}</a></li>
                                     <li role="separator" class="divider"></li>
                                     <li>
                                         <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
@@ -73,10 +73,10 @@
     <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
             <ul class="nav nav-sidebar">
-                <li class="active"><a href="{{ url('/admin') }}">{{__('roya.DASHBOARD')}}</a></li>
-                <li><a href="{{ url('/admin/users') }}">{{__('roya.USERS')}}</a></li>
-                <li><a href="{{ url('/admin/shows') }}">{{__('roya.SHOWS')}}</a></li>
-                <li><a href="{{ url('/admin/episodes') }}">{{__('roya.EPISODES')}}</a></li>
+                <li @if(\Request::route()->getName() == 'admin')class="active"@endif><a href="{{ url('/admin') }}">{{__('roya.DASHBOARD')}}</a></li>
+                <li @if(\Request::route()->getName() == 'users.index')class="active"@endif><a href="{{ url('/admin/users') }}">{{__('roya.USERS')}} </a></li>
+                <li @if(\Request::route()->getName() == 'shows.index')class="active"@endif><a href="{{ url('/admin/shows') }}">{{__('roya.SHOWS')}}</a></li>
+                <li @if(\Request::route()->getName() == 'episodes.index')class="active"@endif><a href="{{ url('/admin/episodes') }}">{{__('roya.EPISODES')}}</a></li>
             </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">

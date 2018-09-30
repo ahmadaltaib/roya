@@ -26,9 +26,13 @@ Route::group([
 
     Route::get('/show/{id}/season/{season}', 'ShowController@seasonDetails')->name('seasonDetails');
 
-    Route::get('/list', 'ShowController@listShows')->name('Listing');
+    Route::get('/listshows', 'ShowController@listShows')->name('Listing');
 
-    Route::get('/list/{page}', 'ShowController@listShows')->name('Listing');
+    Route::get('/listshows/{page}', 'ShowController@listShows')->name('Listing');
+
+    Route::get('/listepisodes', 'EpisodeController@listEpisodes')->name('Listing');
+
+    Route::get('/listepisodes/{page}', 'EpisodeController@listEpisodes')->name('Listing');
 
     Route::get('/episode/{id}', 'EpisodeController@episodeDetails')->name('episodeDetails');
 
@@ -49,7 +53,8 @@ Route::group([
     // Admin Calls
     Route::get('/admin', 'AdminController@admin')->middleware('is_admin')->name('admin');
 
-    Route::get('/admin/users', 'AdminController@users')->middleware('is_admin')->name('users');
+    Route::get('/admin/users/grid', 'UsersController@grid');
+    Route::resource('/admin/users', 'UsersController');
 
     Route::get('/admin/shows', 'AdminController@shows')->middleware('is_admin')->name('shows');
 

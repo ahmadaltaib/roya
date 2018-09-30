@@ -2,7 +2,8 @@
 
 return [
     "ROYA" => "Ro'ya",
-    "RECENT" => "Recent Shows",
+    "RECENT_SHOWS" => "Recent Shows",
+    "RECENT_EPISODES" => "Recent Episodes",
     "NEED_QUICK_HELP_TYPE_YOUR_WORDS" => "Need quick help? Search here",
     "FIND" => "Find",
     "SEASON" => "Season no. ",
@@ -10,6 +11,7 @@ return [
     "NO_EPISODES" => "No available episodes for this season.",
     "LIST_ALL" => "List All > ",
     "LIST_ALL_SHOWS" => "List all shows",
+    "LIST_ALL_EPISODES" => "List all episodes",
     "LIKE" => "Like",
     "DISLIKE" => "Dislike",
     "SHOW_NAME" => "Show Name",
@@ -28,6 +30,7 @@ return [
     "DASHBOARD" => "Dashboard",
     "SHOWS" => "Shows",
     "EPISODES" => "Episodes",
-    "USERS" => "Users"
+    "USERS" => "Users",
+    "LIST_OF" => "List of",
 
 ];

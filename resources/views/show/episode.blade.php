@@ -22,7 +22,7 @@
 
         <div class="row">
             <div class="col-md-4">
-                <img class="img-thumbnail" width="304" height="236" src="{{URL::asset('uploads/episode_thumbnail/'.$aDetails->thumbnail)}}" alt="{{$aDetails->title}}">
+                <img class="img-thumbnail" width="304" height="236" src="{{URL::asset('uploads/episodes_thumbnail/'.$aDetails->thumbnail)}}" alt="{{$aDetails->title}}">
             </div>
 
             <div class="col-md-6">
